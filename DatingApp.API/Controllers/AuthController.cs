@@ -1,3 +1,4 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -26,10 +27,6 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
-            //validate request if not annotated with ApiController
-            // if(!ModelState.IsValid())
-            //     return BadRequest(ModelState);
-
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
             if (await _repo.UserExists(userForRegisterDto.Username))
@@ -44,7 +41,6 @@ namespace DatingApp.API.Controllers
 
             //temporary fix later with actual route to created user
             return StatusCode(201);
-
         }
 
         [HttpPost("login")]
@@ -79,7 +75,6 @@ namespace DatingApp.API.Controllers
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
             });
-
         }
     }
 }
