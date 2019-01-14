@@ -59,13 +59,15 @@ namespace DatingApp.API.Migrations
 
                     b.Property<string>("LookingFor");
 
+                    b.Property<string>("Interests");
+
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
 
                     b.Property<string>("Username");
 
-                    b.Property<string>("introduction");
+                    b.Property<string>("Introduction");
 
                     b.HasKey("Id");
 

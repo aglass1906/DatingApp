@@ -57,6 +57,8 @@ namespace DatingApp.API.Migrations
 
                     b.Property<string>("LookingFor");
 
+                    // b.Property<string>("Interests");
+
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
